@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  text-align: center;
+}
+body{
+    background-color: #382aa8;
+}
+.todo-list {
+  margin-bottom: 20px;
+}
+
+#task-input {
+  width: 300px;
+  padding: 5px;
+  border-radius: 11px;
+}
+
+#submit-button {
+  padding: 5px 10px;
+  border-radius: 11px;
+  background-color: rgb(158, 72, 239);
+  color: white;
+}
+h1{
+    color: white;
+}
+#task-list {
+  list-style-type: none;
+  padding: 0;
+}
+.main{
+    margin-top: 200px;
+    margin-left: 640px;
+    border: 1px solid black;
+    width: 250px;
+    height: 200px;
+    background-color: hsl(250, 95%, 9%);
+    border-radius: 9px;
+}
+.status{
+    color: white;
+    margin: 20px;
+}
+.reed button{
+    width: 160px;
+    padding: 4px;
+    border-radius: 8px;
+}
+.mark button{
+    width: 160px;
+    padding: 4px;
+    border-radius: 8px;
+    margin: 4px;
+    background-color: green;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <!-- <aside>
+💡 **Q.8** Create a Simple Todo Web App with following features :
+
+- An input button where users can type their tasks.
+- On clicking the submit button, the entered task should be displayed in the UI.
+- The UI layout should resemble the image provided. -->
+    <div class="container">
+        <h1>Todo App</h1>
+        
+        <div class="todo-list">
+            
+          <input type="text" id="task-input" placeholder="Enter a task">
+          <button id="submit-button">Add Task</button>
+          <ul id="task-list">
+            <div class="main">
+            <div class="status">Status : Pending</div>
+            <div class="reed"><button>Remove</button></div>
+            <div class="mark"><button>Mark Completed</button></div>
+            <div class="reed"><button>Edit Task</button></div>
+        </div>
+          </ul>
+        </div>
+       
+      </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  const taskInput = document.getElementById("task-input");
+  const submitButton = document.getElementById("submit-button");
+  const taskList = document.getElementById("task-list");
+
+  submitButton.addEventListener("click", function() {
+    const task = taskInput.value.trim();
+    if (task !== "") {
+      const taskItem = document.createElement("li");
+      taskItem.textContent = task;
+      taskList.appendChild(taskItem);
+      taskInput.value = "";
+    }
+  });
+});
+
+    </script>
+</body>
+</html>

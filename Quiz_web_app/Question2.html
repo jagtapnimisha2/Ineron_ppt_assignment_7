@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Clock</title>
+  <style>
+    .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: rgb(105, 41, 179);
+      font-family: Arial, sans-serif;
+    }
+    h1{
+      font-size: 80px;
+      color: rgb(68, 42, 97);
+      margin-left: 500px;
+    }
+    body{
+      background-color: rgb(105, 41, 179);
+    }
+    
+    .clock {
+      font-size: 6rem;
+      color: white;
+      margin-bottom: 600px;
+      width: 420px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: rgb(142, 127, 250);
+    }
+  </style>
+</head>
+<body>
+  <!-- <aside>
+💡 **Q.2** Create an elegant and functional digital clock using HTML, CSS, and JavaScript, where the current time is displayed with precision and style as shown in the below image
+ -->
+  <h1>P W S K I L L S</h1>
+<div class="body">
+  <div class="clock" id="clock"></div>
+  
+  <script>
+    function updateClock() {
+      const clockElement = document.getElementById("clock");
+      const currentTime = new Date();
+      const hours = currentTime.getHours().toString().padStart(2, "0");
+      const minutes = currentTime.getMinutes().toString().padStart(2, "0");
+      const seconds = currentTime.getSeconds().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      
+      clockElement.textContent = timeString;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+  </div>
+</body>
+</html>

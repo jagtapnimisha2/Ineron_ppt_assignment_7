@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ 
+}
+body{
+    background-color: rgb(34, 34, 35);  
+}
+.container{
+    padding: 80px;
+    background-color: rgb(34, 34, 35);
+}
+.container form{
+    border: 1px solid black;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 14px;
+ 
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+#preview-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.live-preview-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+#live-preview {
+  text-align: left;
+}
+
+h2 {
+  margin-top: 0;
+}
+#name-input,#email-input{
+    border: 2px solid rgb(8, 162, 213);
+    width: 280px;
+    border-radius: 4px;
+    height: 29px;
+}
+#message-input{
+/* margin-left: 18px; */
+width: 280px;
+/* margin-right: 1px; */
+    border: 2px solid rgb(8, 162, 213);
+    border-radius: 4px;
+    height: 220px;
+}
+button{
+    width: 294px;
+    border: none;
+    color: white;
+    background-color: rgb(8, 162, 213);
+    height: 34px;
+    border-radius: 4px;
+}
+.form-section{
+    display: flex;
+}
+.live-preview-section{
+    height: 400px;
+    width: 800px;
+    background-color: #fff;
+    margin-top: 40px;
+    border-radius: 14px;
+}
+    </style>
+</head>
+<body>
+    <!-- Q.7 develop a live preview project using HTML, CSS, and JavaScript, consisting of two sections: a form section and a live preview section. The live preview section should dynamically display the information filled in the form section in real time. as shown in the below image -->
+    <div class="container">
+       
+        <div class="form-section">
+          <form id="preview-form">
+            <h1>Publish Your Story</h1>
+            <input type="text" id="name-input" placeholder="Enter your name">
+            <input type="email" id="email-input" placeholder="Enter your email">
+            <textarea id="message-input" placeholder="Enter your message"></textarea>
+            <button>Submit My Story</button>
+          </form>
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="live-preview-section">
+            <h2>Live Preview</h2>
+            <div id="live-preview"></div>
+          </div>
+        </div> 
+        </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  const nameInput = document.getElementById("name-input");
+  const emailInput = document.getElementById("email-input");
+  const messageInput = document.getElementById("message-input");
+  const livePreview = document.getElementById("live-preview");
+
+  nameInput.addEventListener("input", updatePreview);
+  emailInput.addEventListener("input", updatePreview);
+  messageInput.addEventListener("input", updatePreview);
+
+  function updatePreview() {
+    const name = nameInput.value;
+    const email = emailInput.value;
+    const message = messageInput.value;
+
+    const previewContent = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong> ${message}</p>
+    `;
+
+    livePreview.innerHTML = previewContent;
+  }
+});
+
+      </script> 
+</body>
+</html>
